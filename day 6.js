@@ -1,21 +1,19 @@
-let test = [3, 4, 3, 1, 2]
+// eslint-disable-next-line no-unused-vars
+const test = [3, 4, 3, 1, 2]
 
-let input = require("fs").readFileSync("./day 6.txt", {
-  encoding: "utf8"
+const input = require('fs').readFileSync('./day 6.txt', {
+  encoding: 'utf8'
 }).split(',').map(v => Number(v))
 
-//input = test;
+// input = test;
 
-
-function getFish(days) {
-
-
+function getFish (days) {
   // group all fish that have x timer on them
 
-  let timer = Array(9).fill(0);
+  const timer = Array(9).fill(0)
   input.forEach(e => {
-    timer[e]++;
-  });
+    timer[e]++
+  })
 
   //  each day shift fish in a circular fashion
 
@@ -25,8 +23,8 @@ function getFish(days) {
   for (let i = 0; i < days; i++) {
     timer[(i + 7) % 9] += timer[i % 9]
   }
- return timer.reduce((a, b) => a + b)
+  return timer.reduce((a, b) => a + b)
 }
 
-console.log("part 1: ", getFish(80));
-console.log("part 2: ", getFish(256));
+console.log('part 1: ', getFish(80))
+console.log('part 2: ', getFish(256))
