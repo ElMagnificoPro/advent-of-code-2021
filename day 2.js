@@ -1,6 +1,5 @@
 const input = require('fs').readFileSync('./day 2.txt', { encoding: 'utf8' }).split('\r\n')
 
-// eslint-disable-next-line no-unused-vars
 const test = [
   'forward 5',
   'down 5',
